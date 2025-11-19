@@ -15,6 +15,9 @@ export default function Ret2Win() {
                     function. This walkthrough guides beginners through tools, mindset,
                     analysis, and payload building.
                 </p>
+                <p className="text-gray-300 text-lg leading-relaxed mb-10">
+                    In ret2win challenges, the goal of the challenge is to force the program to run a function which it normally wouln't run under normal circumstances.
+                </p>
 
                 {/* Tools Section */}
                 <section className="mb-12">
@@ -36,7 +39,20 @@ export default function Ret2Win() {
                             <span className="text-green-400 font-semibold">pattern_create / pattern_offset</span> — for calculating
                             the exact overflow length.
                         </li>
+                        <li>
+                            <span className="text-green-400 font-semibold">objdump</span> — helps find function addresses in the program.
+                            With <code className="text-green-400">objdump -d</code>, you get full disassembly and can locate the function’s address.
+                        </li>
+                        <li>
+                            <span className="text-green-400 font-semibold">radare2</span> — an open-source reverse-engineering tool for
+                            analyzing and debugging binaries. It shows disassembly, memory maps, and debugging info.
+                            In short: it tears a binary open and gives full control to inspect and manipulate everything.
+                            <br />
+                            eg. <span className="text-green-400 font-semibold">r2 -d &lt;file&gt;</span>, then use
+                            <span className="text-green-400 font-semibold"> afl | grep &lt;function&gt;</span> to find target addresses.
+                        </li>
                     </ul>
+
                 </section>
 
                 {/* Understanding the Binary */}
@@ -118,11 +134,11 @@ p.interactive()`}
                     </pre>
 
                     <p className="text-gray-400 leading-relaxed mt-4">
-    This payload works because it fills the buffer up to the exact <span className="text-green-400 font-semibold">OFFSET</span>, 
-    then overwrites the saved <span className="text-green-400 font-semibold">RIP</span> with the address of <span className="text-green-400 font-semibold">win()</span>. 
-    When the vulnerable function returns, the CPU uses the overwritten RIP and jumps directly to <span className="text-green-400 font-semibold">win()</span>, 
-    executing it instead of returning to the normal flow. This simple yet powerful technique demonstrates how controlling memory can redirect program execution.
-</p>
+                        This payload works because it fills the buffer up to the exact <span className="text-green-400 font-semibold">OFFSET</span>,
+                        then overwrites the saved <span className="text-green-400 font-semibold">RIP</span> with the address of <span className="text-green-400 font-semibold">win()</span>.
+                        When the vulnerable function returns, the CPU uses the overwritten RIP and jumps directly to <span className="text-green-400 font-semibold">win()</span>,
+                        executing it instead of returning to the normal flow. This simple yet powerful technique demonstrates how controlling memory can redirect program execution.
+                    </p>
 
                 </section>
 

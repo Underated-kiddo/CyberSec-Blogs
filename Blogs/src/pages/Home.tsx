@@ -11,8 +11,7 @@ export default function Home() {
         {
             title: "Buffer Overflow",
             path: "/blogs/ret2win",
-            description:
-                "Buffer overflow happens when a program writes more data into a memory buffer than it can hold, causing the extra data to spill into adjacent memory.In this blog ll be talking more about Ret2Win a technique that can be used as an exploit strategy to discover these buffer overflow. Select to dive in ...",
+            description:"Buffer overflow occurs when a program writes more data into a buffer than it can handle, spilling into nearby memory.This blog focuses on Ret2Win, an exploit technique used to take advantage of such overflows.Click to dive in and learn how it works."
         },
     ];
 
