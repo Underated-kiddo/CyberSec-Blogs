@@ -3,16 +3,16 @@ import { TerminalSquare } from "lucide-react";
 
 export default function Home() {
     const blogs = [
-        { 
-            title: "247CTF  Challenges",
-            path: "blogs/247CTFs",
-            description: "My 247CTF solves ,touched on MISC,Reverse engineering, WebExploit, PWN,Beginner stuff too"
-        },
+        // { 
+        //     title: "247CTF  Challenges",
+        //     path: "blogs/247CTFs",
+        //     description: "My 247CTF solves ,touched on MISC,Reverse engineering, WebExploit, PWN,Beginner stuff too"
+        // },
         {
-            title: "ret2win — Buffer Overflow",
+            title: "Buffer Overflow",
             path: "/blogs/ret2win",
             description:
-                "A classic buffer overflow challenge where you overwrite the return address to call the hidden win() function.",
+                "Buffer overflow happens when a program writes more data into a memory buffer than it can hold, causing the extra data to spill into adjacent memory.In this blog ll be talking more about Ret2Win a technique that can be used as an exploit strategy to discover these buffer overflow. Select to dive in ...",
         },
     ];
 
@@ -23,7 +23,7 @@ export default function Home() {
                     <TerminalSquare className="w-14 h-14 text-green-400 animate-pulse" />
                 </div>
                 <h1 className="text-5xl font-extrabold mb-6 tracking-tight">
-                    Cybersecurity
+                    Larry's CyberSec Corner
                 </h1>
                 <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
                     Welcome to my personal CyberSecurity Blog Page.
