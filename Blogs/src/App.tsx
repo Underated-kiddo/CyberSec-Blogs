@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Pages
 import HomePage from "./pages/Home";
-import Ret2WinPage from "./pages/blogs/Re2win";
+import Ret2WinPage from "./pages/blogs/Ret2Win";
 import CTF247Page from "./pages/blogs/247CTFs";
 export default function App() {
   return (
@@ -10,7 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/blogs/ret2win" element={<Ret2WinPage />} />
+        <Route path="/blogs/ret2Win" element={<Ret2WinPage />} />
         <Route path="/blogs/247CTFs" element={< CTF247Page />} />
       </Routes>
     </Router>

@@ -17,57 +17,38 @@ If you are developing a production application, we recommend updating the config
 
 ```js
 export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+  # Cybersecurity Blog — My Journey
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  This repository will host my personal blog where I document my journey learning and working in cybersecurity. Expect a mix of:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  - CTF write-ups and walkthroughs
+  - Tooling notes and mini-guides
+  - Vulnerability research and exploit write-ups (when safe to share)
+  - Learning notes, resources, and lessons learned
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  ## Where posts live
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  Add new posts under `src/pages/blogs/` — each post can be a React page (`.tsx`) following the project's existing structure. If you prefer Markdown/MDX and want it supported, I can help add an MDX pipeline.
+
+  ## Run the project locally
+
+  Open PowerShell and run:
+
+  ```powershell
+  pnpm install
+  pnpm dev
+  ```
+
+  The site runs with Vite for fast local development.
+
+  ## Contributing / Adding posts
+
+  - Create a new file in `src/pages/blogs/` named like `MyPostTitle.tsx` and export the component for that page.
+  - Keep post content focused and include references or redactions for sensitive details when needed.
+
+  If you want, I can add a simple post template or a script to scaffold new posts.
+
+  ## Notes
+
+  - This repo is a personal learning log — content may be experimental. Reach out via issues or a PR if you'd like to suggest edits.

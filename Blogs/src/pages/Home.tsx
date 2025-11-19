@@ -10,7 +10,7 @@ export default function Home() {
         // },
         {
             title: "Buffer Overflow",
-            path: "/blogs/ret2win",
+            path: "/blogs/ret2Win",
             description:"Buffer overflow occurs when a program writes more data into a buffer than it can handle, spilling into nearby memory.This blog focuses on Ret2Win, an exploit technique used to take advantage of such overflows.Click to dive in and learn how it works."
         },
     ];
